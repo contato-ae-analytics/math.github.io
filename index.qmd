@@ -1,11 +1,125 @@
 ---
-title: "math.github.io"
+title: "Chapters"
+format:
+  html:
+    theme: flatly
+    css: s2.css
+    # ADICIONE ESTA LINHA ABAIXO:
+    include-in-header: <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+# Configuração da Lista de Projetos deste módulo
+listing:
+  contents: 
+    - "*.qmd"           # Pega todos os arquivos desta pasta
+    - "!index.qmd"      # IMPORTANTE: Exclui a si mesmo para não criar um loop infinito
+  type: default         # 'default' cria uma lista detalhada (ótimo para ler resumos de aulas)
+  sort: "date desc"     # Do mais recente para o mais antigo
+  image-align: left        # <--- 1. ISSO JOGA A FOTO PARA A ESQUERDA (PRIMEIRO)
+  # fields: [image, date, title, description, reading-time] # Mostra tempo de leitura
+  # fields: [image, title, author, date, reading-time] # Mostra tempo de leitura
+  # fields: [title, author, date, reading-time] # Mostra tempo de leitura
+  fields: [title, reading-time] # Mostra tempo de leitura
+  categories: true   
+
+page-layout: full
+title-block-banner: false
+
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
-```{r}
-1 + 1
+<div id="fundo-animado-snoopy" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -2;">
+  
+  <div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: -3;"></div>
+  
+  <div class="snoop-dance-container"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { 
+        "value": 70,           /* QUANTIDADE: Densidade das partículas na tela */
+        "density": { "enable": true, "value_area": 800 } 
+      },
+      "color": { 
+        "value": "#000000"      /* COR: Definida como preto sólido (Corrigido) */
+      },
+      "shape": { "type": "circle" }, /* FORMA: Partículas circulares */
+      "opacity": { 
+        "value": 0.3,           /* VISIBILIDADE: Transparência das bolinhas */
+        "random": false 
+      },
+      "size": { 
+        "value": 3,             /* TAMANHO: Diâmetro das bolinhas */
+        "random": true          /* Faz os tamanhos variarem um pouco */
+      },
+      "line_linked": {
+        "enable": false
+      },         
+      <!-- /* CONEXÕES: Ativado para ligar as bolinhas */ -->
+      <!-- "line_linked": {  -->
+      <!--   "enable": true,         /* CONEXÕES: Ativado para ligar as bolinhas */ -->
+      <!--   "distance": 150,        /* Distância máxima entre pontos para criar linha */ -->
+      <!--   "color": "#18bc9c",     /* COR DA LINHA: Seu Verde Teal característico */ -->
+      <!--   "opacity": 0.2,         /* Linhas sutis para não poluir o visual */ -->
+      <!--   "width": 0.8            /* Grossura fina das linhas */ -->
+      <!-- }, -->
+      "move": { 
+        "enable": true,         /* MOVIMENTO: Permite que as bolinhas flutuem */
+        "speed": 1.5,           /* VELOCIDADE: Ritmo constante do fundo */
+        "direction": "none",    /* Direção aleatória */
+        "random": true,         /* Movimento orgânico */
+        "out_mode": "out"       /* Partículas saem por um lado e entram pelo outro */
+      }
+    },
+    "interactivity": {
+      "events": { 
+        /* INTERAÇÃO: Desativado para o mouse não interferir no fundo minimalista */
+        "onhover": { "enable": false }, 
+        "onclick": { "enable": false }
+      }
+    }
+  });
+</script>
+
+<style>
+  /* RODAPÉ (FOOTER): Fundo preto sólido */
+  .quarto-page-footer {
+    background-color: #000000 !important; /* Força o preto absoluto */
+    position: relative !important;         /* Necessário para controle de camada */
+    z-index: 10 !important;                /* Fica à frente das partículas */
+    border-top: none !important;           /* Remove qualquer linha residual verde */
+  }
+
+  /* TEXTO E ÍCONES DO RODAPÉ: Cor Cinza Sóbrio */
+  .nav-footer-left, 
+  .nav-footer-center, 
+  .nav-footer-right, 
+  .quarto-page-footer a, 
+  .quarto-page-footer i {
+    color: #888888 !important;   /* Cor cinza original solicitada */
+    position: relative !important;
+    z-index: 11 !important;      /* Acima da base preta do footer */
+    text-decoration: none;       /* Remove sublinhados de links */
+  }
+</style>
+
+
+```{r setup, include=FALSE}
+# Define opções padrão para todos os chunks de código no R Markdown
+knitr::opts_chunk$set(
+  echo = TRUE,         # Oculta o código nos resultados finais do documento
+  warning = FALSE,     # Suprime mensagens de aviso (warnings)
+  message = FALSE,     # Suprime mensagens informativas (como as de carregamento de pacotes)
+  fig.width = 10,      # Define a largura padrão das figuras (em polegadas)
+  fig.height = 6,      # Define a altura padrão das figuras (em polegadas)
+  fig.align = 'center'
+)
 ```
+
+<!-- ### Modulos -->
+
